@@ -1,0 +1,17 @@
+<div class="container justify-content-center bmr-width mt-5">
+  <div class="jumbotron my-auto">
+    <h3 class="text-center text-primary">BMR Calculation Results</h3>
+		<p>This means that your body will burn <strong><%=(number_with_precision(@bmr, :precision => 2))%></strong> calories each day if you engage in <%=@user.intake%> for the entire day.</p>
+		<b>Based upon this, your daily calorie requirement would be <%=(number_with_precision(@total_calories, :precision => 2))%> calories</b>
+		<p>These calculations are for a <%=@user.gender%> of <%=(number_with_precision(@user.age, :precision => 1))%> years of age with the height, weight and lifestyle you specified, using the below Harris-Benedict equation.</p>
+		<br>
+		<i>
+			<b>Men</b>	BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5
+		</i>
+		<br>
+		<br>
+		<i>
+			<b>Women</b>	BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161
+		</i>
+	</div>
+</div>

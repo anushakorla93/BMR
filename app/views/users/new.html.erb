@@ -1,0 +1,46 @@
+<div class="container justify-content-center bmr-width mt-5">
+  <div class="jumbotron my-auto">
+    <h3 class="text-center text-primary">Calculate BMR</h3>
+
+    <%= form_for(@user)do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field form-group">
+        <%= f.label :gender %>
+        <%= f.select(:gender, [ 'Male', 'Female' ], {}, { :class => 'form-control' }) %> 
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :weight, "Weight(kg)" %>
+        <%= f.number_field :weight, class: "form-control", step: :any %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :height, "Height(cm)" %>
+        <%= f.number_field :height, class: "form-control", step: :any %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :age %>
+        <%= f.number_field :age, class: "form-control", step: :any %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :intake, "Select your activity level:" %>
+        <%= f.select(:intake, ['Sedentary or light activity', 'Active or moderately active', 'Vigorously active' ], {}, { :class => 'form-control' }) %>
+        
+      </div>
+
+      <div class="actions">
+        <%= f.submit "submit" , class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

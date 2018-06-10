@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BMR</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<% if notice.present? %>
+      <div class="alert alert-success alert-dismissible styling ">
+        <button type="button" class="close" data-dismiss="alert">&times;      </button>
+  			<span class="text-center"><%= notice %></span>
+      </div>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>
